@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "public_suffix", "~> 5.0"
   spec.add_dependency "riemann-tools", "~> 1.0"
   spec.add_dependency "rdap", "~> 0.1.5"
 end

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "public_suffix"
 require "rdap"
 
 require "riemann/tools"
@@ -11,8 +12,12 @@ module Riemann
 
       opt :domains, "Domains to monitor", short: :none, type: :strings, default: []
 
+      def public_suffix_domains
+        @public_suffix_domains ||= opts[:domains].map { |d| PublicSuffix.domain(d) }.uniq
+      end
+
       def tick
-        opts[:domains].each do |domain|
+        public_suffix_domains.each do |domain|
           check_domain(domain)
         end
       end
