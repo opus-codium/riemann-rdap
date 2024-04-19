@@ -7,7 +7,7 @@ require "riemann/tools"
 
 module Riemann
   module Tools
-    class RDAP
+    class Rdap
       include Riemann::Tools
 
       opt :domains, "Domains to monitor", short: :none, type: :strings, default: []
@@ -25,14 +25,14 @@ module Riemann
       end
 
       def check_domain(domain)
-        data = ::RDAP.domain(domain)
+        data = RDAP.domain(domain)
         expiration_date = DateTime.parse(data["events"].find { |e| e["eventAction"] == "expiration" }["eventDate"])
         time_left_days = (expiration_date - DateTime.now).to_i
 
         description = "Domain #{domain} will expire in #{time_left_days} days"
 
         report_expiration(domain, time_left_days, description)
-      rescue ::RDAP::NotFound
+      rescue RDAP::NotFound
         report_expiration(domain, nil, "Domain #{domain} not found")
       end
 

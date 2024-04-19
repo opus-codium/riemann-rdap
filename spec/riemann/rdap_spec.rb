@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-RSpec.describe Riemann::Tools::RDAP do
+RSpec.describe Riemann::Tools::Rdap do
   describe "#check_domain" do
     before do
-      allow(::RDAP).to receive(:domain).with("example.com").and_return({
+      allow(RDAP).to receive(:domain).with("example.com").and_return({
         "events" => [
           {"eventAction" => "expiration", "eventDate" => "2021-01-01T00:00:00Z"}
         ]
