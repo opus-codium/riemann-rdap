@@ -11,6 +11,8 @@ module Riemann
       include Riemann::Tools
 
       opt :domains, "Domains to monitor", short: :none, type: :strings, default: []
+      opt :expiration_warning_days, "Number of days before expiration to warn", short: :none, default: 30
+      opt :expiration_critical_days, "Number of days before expiration to alert", short: :none, default: 7
 
       def public_suffix_domains
         @public_suffix_domains ||= opts[:domains].map { |d| PublicSuffix.domain(d) }.uniq
@@ -48,9 +50,9 @@ module Riemann
       def expiration_state(time_left_days)
         return nil unless time_left_days
 
-        if time_left_days < 7
+        if time_left_days < opts[:expiration_critical_days]
           "critical"
-        elsif time_left_days < 30
+        elsif time_left_days < opts[:expiration_warning_days]
           "warning"
         else
           "ok"
