@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "public_suffix", ">= 5", "< 8"
-  spec.add_dependency "riemann-tools", "~> 1.0"
+  spec.add_dependency "riemann-tools", ">= 1", "< 3"
   spec.add_dependency "rdap", "~> 0.1.5"
 end
