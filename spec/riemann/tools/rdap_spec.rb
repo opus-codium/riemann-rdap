@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe Riemann::Tools::Rdap do
+  let(:instance) { subject }
+
   describe "#check_domain" do
     before do
       allow(RDAP).to receive(:domain).with("example.com").and_return({
@@ -10,8 +12,6 @@ RSpec.describe Riemann::Tools::Rdap do
       })
       allow(DateTime).to receive(:now).and_return(DateTime.parse("2020-12-01T00:00:00Z"))
     end
-
-    let(:instance) { subject }
 
     it "reports expiration" do
       allow(instance).to receive(:report_expiration)
