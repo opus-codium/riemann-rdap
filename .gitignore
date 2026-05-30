@@ -1,12 +1,8 @@
-/.bundle/
-/.yardoc
-/_yardoc/
+# Managed by modulesync - DO NOT EDIT
+# See: https://github.com/opus-codium/modulesync_riemann
+
+/.rspec_status
 /Gemfile.lock
 /coverage/
-/doc/
 /pkg/
-/spec/reports/
-/tmp/
-
-# rspec failure tracking
-.rspec_status
+/spec/examples.txt

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.describe Riemann::Tools::Rdap do
+  let(:instance) { subject }
+
   describe "#check_domain" do
     before do
       allow(RDAP).to receive(:domain).with("example.com").and_return({
@@ -12,27 +14,27 @@ RSpec.describe Riemann::Tools::Rdap do
     end
 
     it "reports expiration" do
-      allow(subject).to receive(:report_expiration)
-      subject.check_domain("example.com")
-      expect(subject).to have_received(:report_expiration).with("example.com", 31, "Domain example.com will expire in 31 days")
+      allow(instance).to receive(:report_expiration)
+      instance.check_domain("example.com")
+      expect(instance).to have_received(:report_expiration).with("example.com", 31, "Domain example.com will expire in 31 days")
     end
   end
 
   describe "#expiration_state" do
     it "returns nil for nil" do
-      expect(subject.expiration_state(nil)).to be_nil
+      expect(instance.expiration_state(nil)).to be_nil
     end
 
     it "returns critical for less than 7 days" do
-      expect(subject.expiration_state(6)).to eq("critical")
+      expect(instance.expiration_state(6)).to eq("critical")
     end
 
     it "returns warning for less than 30 days" do
-      expect(subject.expiration_state(29)).to eq("warning")
+      expect(instance.expiration_state(29)).to eq("warning")
     end
 
     it "returns ok for more than 30 days" do
-      expect(subject.expiration_state(30)).to eq("ok")
+      expect(instance.expiration_state(30)).to eq("ok")
     end
   end
 end
