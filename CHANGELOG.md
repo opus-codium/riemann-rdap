@@ -1,18 +1,14 @@
 # Changelog
 
-## [v1.0.0](https://github.com/opus-codium/riemann-rdap/tree/v1.0.0) (2024-04-19)
+## [1.1.0](https://github.com/opus-codium/riemann-rdap/tree/1.1.0) (2026-06-02)
 
-[Full Changelog](https://github.com/opus-codium/riemann-rdap/compare/ada15887f758e3e1a2e04a799b407fce10d6405a...v1.0.0)
+[Full Changelog](https://github.com/opus-codium/riemann-rdap/compare/v1.0.0...1.1.0)
 
 **Implemented enhancements:**
 
-- Allow tunning expiration thresholds [\#2](https://github.com/opus-codium/riemann-rdap/pull/2) ([smortex](https://github.com/smortex))
-- Only check public suffix domains [\#1](https://github.com/opus-codium/riemann-rdap/pull/1) ([smortex](https://github.com/smortex))
-
-**Fixed bugs:**
-
-- Fix console script [\#4](https://github.com/opus-codium/riemann-rdap/pull/4) ([smortex](https://github.com/smortex))
-- Fix running from riemann-wrapper [\#3](https://github.com/opus-codium/riemann-rdap/pull/3) ([smortex](https://github.com/smortex))
+- Update riemann-tools requirement from ~\> 1.0 to \>= 1, \< 3 [\#10](https://github.com/opus-codium/riemann-rdap/pull/10) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update public\_suffix requirement from \>= 5, \< 7 to \>= 5, \< 8 [\#8](https://github.com/opus-codium/riemann-rdap/pull/8) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update public\_suffix requirement from ~\> 5.0 to \>= 5, \< 7 [\#6](https://github.com/opus-codium/riemann-rdap/pull/6) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 
 
