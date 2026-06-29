@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "public_suffix", ">= 5", "< 8"
   spec.add_dependency "riemann-tools", ">= 1", "< 3"
-  spec.add_dependency "rdap", "~> 0.1.5"
+  spec.add_dependency "rdap", ">= 0.1.5", "< 2.0.0"
 end
