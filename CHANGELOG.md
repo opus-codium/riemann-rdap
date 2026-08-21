@@ -1,8 +1,16 @@
 # Changelog
 
-## [1.1.0](https://github.com/opus-codium/riemann-rdap/tree/1.1.0) (2026-06-02)
+## [v1.2.0](https://github.com/opus-codium/riemann-rdap/tree/v1.2.0) (2026-08-21)
 
-[Full Changelog](https://github.com/opus-codium/riemann-rdap/compare/v1.0.0...1.1.0)
+[Full Changelog](https://github.com/opus-codium/riemann-rdap/compare/v1.1.0...v1.2.0)
+
+**Implemented enhancements:**
+
+- Allow rdap 1.x [\#17](https://github.com/opus-codium/riemann-rdap/pull/17) ([smortex](https://github.com/smortex))
+
+## [v1.1.0](https://github.com/opus-codium/riemann-rdap/tree/v1.1.0) (2026-06-02)
+
+[Full Changelog](https://github.com/opus-codium/riemann-rdap/compare/v1.0.0...v1.1.0)
 
 **Implemented enhancements:**
 
